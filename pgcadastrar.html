@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastrar</title>
+    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="pgcadastrar.css" />
+</head>
+<body>
+    <header class="header">
+        <div>
+            <img src="images/LOGO.svg" alt="logo Itacolomi Restaurante" />
+            <h3>Olá, Patrícia</h3>
+        </div>
+        <a href="#"><img src="images/ic_exit.svg" alt="ícone Sair" /> Sair</a>
+    </header>
+    <main>
+        <div>
+            <a href="Inicial.html"><img src="images/ic_back.svg" alt="ícone Sair"/></a>
+        </div>
+
+        <div id="form-container">
+            <div id="form-container-child">
+                <div id="form-header">
+                    <div id="cadastrar-produtos">
+                        <img src="images/ic_produtos.svg" alt="ícone Produtos">
+                        Cadastrar produtos
+                    </div>
+                    <p id="etapas-tag">Etapas 1 de 2</p>
+                </div>
+                <form>
+                    <input class="form-input" type="text" id="form-nome-produto" name="form-nome-produto" placeholder="Nome do produto">
+                    <input class="form-input" type="textarea" id="form-descricao-produto" name="form-descricao-produto" placeholder="Descrição" maxlength="200" onkeyup="updateCurrentInputDescription()">
+                    <div id="input-description-length-count"><span id="currentLength">0</span>/200</div>
+                    <input class="form-input" type="number" min="0.00" max="10000.00" step="0.01" id="form-valor-produto" name="form-valor-produto" placeholder="Valor (R$)"/>
+
+                    <select class="form-input" id="form-select-category" name="form-select-category">
+                        <option value="" disabled selected>Categoria</option>
+                        <option value="pratoCompleto">Prato completo</option>
+                        <option value="sobremesa">Sobremesa</option>
+                        <option value="bebida">Bebida</option>
+                        <option value="acompanhamento">Acompanhamento</option>
+                    </select>
+
+                    <div class="form-radio-input">
+                        <p>Para quantas pessoas?</p><br>
+                            <input class="form-radio-item" type="radio" id="form-serves-one-person" name="form-people-amount" value="servesOnePerson">
+                            <label for="form-serves-one-person">Serve 1 pessoa</label><br><br>
+                            <input class="form-radio-item" type="radio" id="form-serves-two-persons" name="form-people-amount" value="servesTwoPersons">
+                            <label for="form-serves-two-persons">Serve 2 pessoas</label><br><br>
+                            <input class="form-radio-item" type="radio" id="form-serves-a-family" name="form-people-amount" value="servesAFamily">
+                            <label for="form-serves-a-family">Família - até 4 pessoas</label><br><br>
+                    </div>
+
+                    <div class="form-radio-input">
+                        <p>Disponibilidade: </p><br>
+                        <input class="form-radio-item" type="radio" id="form-product-available" name="form-people-amount" value="servesOnePerson">
+                        <label for="form-serves-one-person">Produto disponível</label><br><br>
+                        <input class="form-radio-item" type="radio" id="form-product-unavailable" name="form-people-amount" value="servesTwoPersons">
+                        <label for="form-serves-two-persons">Produto indisponível</label><br><br>
+                    </div>
+
+                    <div id="container-button-next">
+                        <a id="form-button-next" href="pgcadastrar2.html">Próximo</a>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>
+            2022 |
+            <a href="https://usemobile.com.br/" target="_blank">Usemobile</a>. Todos
+            os direitos reservados.
+        </p>
+    </footer>
+    </body>
+    <script>
+
+        function updateCurrentInputDescription() {
+            document.querySelector("#currentLength").innerText = document.querySelector("#form-descricao-produto").value.length
+        }
+    </script>
+</html>

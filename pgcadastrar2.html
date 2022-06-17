@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastrar</title>
+    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="pgcadastrar2.css" />
+</head>
+<body>
+<header class="header">
+    <div>
+        <img src="images/LOGO.svg" alt="logo Itacolomi Restaurante" />
+        <h3>Olá, Patrícia</h3>
+    </div>
+    <a href="#"><img src="images/ic_exit.svg" alt="ícone Sair" /> Sair</a>
+</header>
+<main>
+    <div>
+        <a href="pgcadastrar.html"><img src="images/ic_back.svg" alt="ícone Sair"/></a>
+    </div>
+
+    <div id="form-container">
+        <div id="form-container-child">
+            <div id="form-header">
+                <div id="cadastrar-produtos">
+                    <img src="images/ic_produtos.svg" alt="ícone Produtos">
+                    Cadastrar produtos
+                </div>
+                <p id="etapas-tag">Etapas 2 de 2</p>
+            </div>
+
+            <p id="select-product-tag">Selecione a foto do produto</p>
+
+            <div id="form-photo-input">
+                <img src="" id="form-photo-display"/>
+                <div class="form-photo-empty">
+                    <img src="images/ic_input_photo.svg" alt="ícone Foto vazia">
+                    <div>
+                        Anexar foto do produto.<br>
+                        
+                    </div>
+                </div>
+
+                <input id="form-photo" type="file" name="form-photo">
+
+            </div>
+
+            <div id="container-button-submit">
+                <a id="form-button-submit" href="Inicial.html">Cadastrar</a>
+            </div>
+
+
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <p>
+        2022 |
+        <a href="https://usemobile.com.br/" target="_blank">Usemobile</a>. Todos
+        os direitos reservados.
+    </p>
+</footer>
+</body>
+<script>
+    const inputPhoto = document.querySelector(".form-photo-empty")
+    var inputPhotoFile = document.querySelector("#form-photo")
+    var imgInput = document.querySelector("#form-photo-display")
+
+    inputPhoto.addEventListener("click", clickOnInput)
+    imgInput.addEventListener("click", clickOnInput)
+
+    function clickOnInput() {
+        document.querySelector("#form-photo").click()
+    }
+
+    inputPhotoFile.addEventListener("change", function () {
+        const file = this.files[0]
+        if(file) {
+            const reader = new FileReader()
+            reader.onload = function () {
+                const result = reader.result
+                imgInput.src = result
+            }
+            reader.readAsDataURL(file)
+        }
+
+        inputPhoto.style.display = "none"
+        imgInput.style.display = "flex"
+    })
+
+
+
+</script>
+</html>

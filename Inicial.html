@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurante Itacolomi</title>
+    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div>
+        <img src="images/LOGO.svg" alt="logo Itacolomi Restaurante" />
+        <h3>Olá, Patrícia</h3>
+      </div>
+      <a href="#"><img src="images/ic_exit.svg" alt="ícone Sair" /> Sair</a>
+    </header>
+
+    <main>
+      <div id="myBtnContainer">
+        <button id="teste" class="btn active" onclick="cliquei()"> Sobremesa </button>
+        <button class="btn" > Bebidas </button>
+        <button class="btn" > Prato Completo </button>
+        <button class="btn" > Promoções </button>
+      </div>
+
+      <div id="searchContainer">
+<!--        <button id="getAll" onclick="filterSelection('getAll')">-->
+<!--          <img src="images/ic_produtos.svg" alt="icone produtos" /> Produtos cadastrados </button>-->
+        <div id="produtos-cadastrados">
+          <img src="images/ic_produtos.svg" alt="icone produtos" />
+          <tag>Produtos cadastrados</tag>
+        </div>
+
+        <input
+          id="searchproduct"
+          onkeyup="search_product()"
+          type="text"
+          name="search"
+          placeholder="Buscar na categoria"
+        />
+
+        <select name="select" id="select">
+          <option value="" disabled selected>Ordenar por (1)</option>
+          <option value="maiorPreco">Maior Preço</option>
+          <option value="menorPreco">Menor Preço</option>
+        </select>
+      </div>
+
+
+      <div class="display_recepies">
+        <div class="empty">
+          <img src="images/icon_empty.svg" alt="" />
+
+          <h3>Ops! Nenhum produto cadastrado</h3>
+
+          <p>Cadastre o seu primeiro produto e comece a vender agora mesmo</p>
+          <a href="pgcadastrar.html">Cadastrar produtos</a>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>
+        2022 |
+        <a href="https://usemobile.com.br/" target="_blank">Usemobile</a>. Todos
+        os direitos reservados.
+      </p>
+    </footer>
+  <script>
+      function cliquei() {
+          for (let i = 0; i < 10; i++) {
+              console.log("cliquei", i)
+          }
+      }
+  </script>
+  </body>
+</html>
