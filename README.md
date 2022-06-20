@@ -1,2 +1,2 @@
 # projeto-restaurante
-Projeto final da trilha de front-end do bootcamp da Use Academy - Code Like a Girl
+O frontend do projeto final da trilha de Fullstack do Bootcamp da Use Academy - Code Like a Girl.
